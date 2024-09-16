@@ -1,0 +1,10 @@
+<?php
+    $taille=5;
+    $star="*";
+    for($i=1;$i<=$taille;$i++){
+        for($j=1;$j<=$i;$j++){
+            echo"$star";
+        }
+        echo"<br>";
+    }
+?>
