@@ -1,0 +1,45 @@
+<?php
+require_once("client.php");
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $us = new client($_POST['prenom'],$_POST['nom'],null,null);
+    $us->modifuser($_POST['num']);
+    header('location:liste_client.php');
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modification de l'utilisateur</title>
+</head>
+<body>
+    <form name="f1" method="post" action="">
+        <table border="1" align="center">
+            <tr>
+                <td colspan="6" bgcolor="#FF0000" align="center">
+                    Veuillez corriger votre nom
+                </td>
+            </tr>
+            <tr>
+                <td>Numéro utilisateur</td>
+                <td><input type="text" name="num" value="<?php echo $_GET['id_client'] ?>" /></td>
+            </tr>
+            <tr>
+                <td>Nom utilisateur</td>
+                <td><input type="text" name="nom" value="" /></td>
+            </tr>
+            <tr>
+                <td>prenom utilisateur</td>
+                <td><input type="text" name="prenom" value="" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Modifier" name="mod" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

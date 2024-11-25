@@ -4,5 +4,5 @@
     echo"$x ";
     echo"$y <br>";
     echo"$x $y <br>";
-    echo"$x "."$y";
+    echo "$x" ." $y";
 ?>
