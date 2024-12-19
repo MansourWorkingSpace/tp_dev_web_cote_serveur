@@ -18,17 +18,14 @@ function AfficheTypeLivre(){
     $mysqli=new mysqli(db_host,db_user,db_password,db_database);
     $req="select distinct typeLivre from livre";
     $res=$mysqli->query($req);
-    $row;
-    while($row=$mysqli->fetch_array(MYSQLI_ASSOC)){
-        echo $row.typeLivre;
-    }
     $mysqli->close();
+    return $res;
 }	
 function VerifLivre()
 {
 	require_once('config.php');
 	$mysqli=new mysqli(db_host,db_user,db_password,db_database);
-	$req="select count(*) from users where NumLivre=$this->numLivre";
+	$req='select count(*) from users where NumLivre='.$this->numLivre;
 	$res=$mysqli->query($req);
     $row=$mysqli->fetch_array(MYSQLI_NUM);
     if($row[0]==0){
@@ -41,13 +38,11 @@ function VerifLivre()
 function verifnbexemplaire(){
     require_once('config.php');
 	$mysqli=new mysqli(db_host,db_user,db_password,db_database);
-    $req="select NED from livre where NumLivre=$this->numLivre";
+    $req="SELECT NED FROM livre WHERE NumLivre=$numLivre";
     $res=$mysqli->query($req);
-    $row;
-    if ($row=$mysqli->fetch_array(MYSQLI_NUM)) {
-        return row[0];
-    }
+    $row=$res->fetch_array(MYSQLI_NUM);
+    echo $row[0];
+    return $row[0];
     $mysqli->close();
 }
-
 }

@@ -7,13 +7,11 @@
 </head>
 <body>
     <form method="post" action="statique.php">
-        <select name="" id="">
-            <option value="">algorethmique</option>
-            <option value="">base de donnee</option>
-            <option value="">web</option>
-            <option value="">multimedia</option>
-            <option value="">reseau</option>
-        </select>
+        <input type="radio" name="Alogorithmique" id="1"><br><br>
+        <input type="radio" name="" id="2">
+        <input type="radio" name="" id="3">
+        <input type="radio" name="" id="4">
+        <br><br>
         <input type="submit" value="afficher">
     </form>
 </body>
